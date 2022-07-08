@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class TeleportationRayBehaviour : MonoBehaviour
 {
-    public XRRayInteractor TeleportationRay;
-    public InputHelpers.Button activationButton;
+    //[SerializeField] private InputActionAsset actionAsset;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!TeleportationRay) return;
-        var TeleportationRayController = TeleportationRay.GetComponent<XRController>();
-        TeleportationRay.gameObject.SetActive(CheckActivation(TeleportationRayController));
-    }
+    //private void Start()
+    //{
+    //    var activate = actionAsset.FindActionMap("XRI RightHand").FindAction()
+    //}
 
-    public bool CheckActivation(XRController controller)
-    {
-        InputHelpers.IsPressed(controller.inputDevice, activationButton, out bool isActive, 0.1f);
-        return isActive;
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    if (!TeleportationRay) return;
+    //    var TeleportationRayController = TeleportationRay.GetComponent<XRController>();
+    //    TeleportationRay.gameObject.SetActive(CheckActivation(TeleportationRayController));
+    //}
+
+    //public bool CheckActivation(XRController controller)
+    //{
+    //    InputHelpers.IsPressed(controller.inputDevice, activationButton, out bool isActive, 0.1f);
+    //    return isActive;
+    //}
 }
